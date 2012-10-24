@@ -2,7 +2,7 @@
 
 class IndexController extends Zend_Controller_Action
 {
-
+//araki
     public function init()
     {
         /* Initialize action controller here */
