@@ -27,4 +27,4 @@ $application = new Zend_Application(
 ini_set( 'display_errors', 1 );
 $application->bootstrap()->run();
 
-/** ƒ}ƒ“ƒVƒ‡ƒ“‚Ì•û‚ªˆÀ‚¢I */
+/** æ–‡å­—åŒ–ã‘æ³¨æ„ï¼ */
