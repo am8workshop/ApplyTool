@@ -1,0 +1,30 @@
+#my_body {
+	margin : 0 auto;
+	width : 780px;
+	height : 480px;
+}
+
+#my_table {
+	width : 760px;
+}
+
+.my_table_sell {
+	width : 320px;
+	height : 450px;
+	border : 3px solid;
+	white-space : normal;
+}
+
+.my_table_sell_inner {
+	width : 310px;
+	height : 440px;
+	vertical-align : baseline;
+	overflow : auto;
+	padding : 5px;
+}
+
+.my_centerBtn {
+	width : 100px;
+	height : 460px;
+	text-align : center;
+}

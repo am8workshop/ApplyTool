@@ -15,9 +15,9 @@
 	<body>
  		hoge
 		<ul id="browser" class="filetree">
-			<li class="closed"><span class="file">hoge1</span>
+			<li class="closed"><span class="file">$(folderName)</span>
 				<ul>
-					<li><span class="file">fuga1</span></li>
+					<li><span class="file">$(fileName)</span></li>
 				</ul>
 			</li>
 			<li class="closed expandable"><span class="folder">hoge2</span>
@@ -38,10 +38,7 @@
 	<script>
 		$(document).ready(function(){
 			// first example
-
 			$("#browser").treeview();
-
-
 		});
 	</script>
 </html>
