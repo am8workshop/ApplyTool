@@ -14,6 +14,13 @@
 	white-space : normal;
 }
 
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	padding: 3px;
+	text-decoration: none;
+	font-size: 1px;
+}
+
 .my_table_sell_inner {
 	width : 310px;
 	height : 440px;
@@ -28,6 +35,29 @@
 	height : 460px;
 	text-align : center;
 }
+
+#jquery-ui-sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+}
+#jquery-ui-sortable li {
+    margin: 0 3px 3px 3px;
+    padding: 0.3em;
+    padding-left: 1em;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: move;
+}
+
+
+
+
+
+
+
+
 
 .tabrow {
     text-align: center;

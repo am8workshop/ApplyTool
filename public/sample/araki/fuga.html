@@ -2,7 +2,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="/sample/css/my_css.css" />
+<link rel="stylesheet" href="/sample/araki/css/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" href="/sample/araki/css/my_css.css" />
+<script type="text/javascript" src="/sample/araki/lib/jquery.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.tabs.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.sortable.js"></script>
 <title>Insert title here</title>
 </head>
 <body id="my_body">
@@ -10,14 +18,47 @@
 	<table id="my_table">
 		<tr>
 			<td class="my_table_sell">
-				<ul class="tabrow">
-				    <li>Lorem</li>
-				    <li>Ipsum</li>
-				    <li class="selected">Sit amet</li>
-				    <li>Consectetur adipisicing</li>
-				</ul>
-				<div class="my_table_sell_inner">
-					hogehgoehgoehgoehgoehgeogheohgeohgoehgoehgoehgeogheogheohgeohgeohgeohgeogheogheohgeohgeohgeogheogheogheogehgoehgeogheogheoheogheogheogheogheogheogheogheohgeogheohgeogehgoehgoehgoehgoehgeogheogheeeeebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaselinebaseline
+				<div id="tabs">
+				    <ul>
+				        <li class="ui-state-default"><a href="#tabs-1">メニュー 1</a></li>
+				        <li class="ui-state-default"><a href="#tabs-2">メニュー 2</a></li>
+				        <li class="ui-state-default"><a href="#tabs-3">メニュー 3</a></li>
+				        <li class="ui-state-default"><a href="#tabs-4">メニュー 4</a></li>
+				        <li class="ui-state-default"><a href="#tabs-5">メニュー 5</a></li>
+				        <li class="ui-state-default"><a href="#tabs-6">メニュー 6</a></li>
+				        <li class="ui-state-default"><a href="#tabs-7">メニュー 7</a></li>
+				        <li class="ui-state-default"><a href="#tabs-8">メニュー 8</a></li>
+				        <li class="ui-state-default"><a href="#tabs-9">メニューeogheogheogheogheo</a></li>
+				    </ul>
+				    <div  class="my_table_sell_inner">
+				    <div id="tabs-1">
+				       
+				    </div>
+				    <div id="tabs-2">
+				        <p>メニュー 2 の内容。</p>
+				    </div>
+				    <div id="tabs-3">
+				        <p>メニュー 3 の内容。</p>
+				    </div>
+				    <div id="tabs-4">
+				        <p>メニュー 1 の内容。</p>
+				    </div>
+				    <div id="tabs-5">
+				        <p>メニュー 2 の内容。</p>
+				    </div>
+				    <div id="tabs-6">
+				        <p>メニュー 3 の内容。</p>
+				    </div>
+				    <div id="tabs-7">
+				        <p>メニュー 1 の内容。</p>
+				    </div>
+				    <div id="tabs-8">
+				        <p>メニュー 2 の内容。</p>
+				    </div>
+				    <div id="tabs-9">
+				        <p>メニュー 3 の内容。</p>
+				    </div>
+				    </div>
 				</div>
 			</td>
 			<td class="my_centerBtn">
@@ -26,18 +67,39 @@
 				</div>
 			</td>
 			<td class="my_table_sell">
-				<div class="my_table_sell_inner">
+				<div id="left-tabs">
+				    <ul>
+				        <li class="ui-state-default"><a href="#left-tabs-4">メニュー 1</a></li>
+				        <li class="ui-state-default"><a href="#left-tabs-5">メニュー 2</a></li>
+				        <li class="ui-state-default"><a href="#left-tabs-6">メニュー 3</a></li>
+				    </ul>
+				    <div  class="my_table_sell_inner">
+				    <div id="left-tabs-4">
+				        <p>メニュー 1 の内容。</p>
+				    </div>
+				    <div id="left-tabs-5">
+				        <p>メニュー 2 の内容。</p>
+				    </div>
+				    <div id="left-tabs-6">
+				        <p>メニュー 3 の内容。</p>
+				    </div>
+				    </div>
 				</div>
 			</td>
 		</tr>
 	</table>
-	
-	<ul class="tabrow">
-	    <li>Lorem</li>
-	    <li>Ipsum</li>
-	    <li class="selected">Sit amet</li>
-	    <li>Consectetur adipisicing</li>
-	</ul>
 
 </body>
+
+<script type="text/javascript">  
+<!--
+$( function() {
+    $( '#tabs' ) . tabs();
+    $('#left-tabs').tabs();
+    $( '.ui-tabs-nav' ) . sortable( {
+        axis: 'x'
+    } );
+});
+// -->
+</script>
 </html>
