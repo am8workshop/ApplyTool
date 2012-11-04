@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="/sample/araki/css/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" href="/sample/araki/css/themes/base/jquery.ui.all.css" />
 <link rel="stylesheet" href="/sample/araki/css/my_css.css" />
 <script type="text/javascript" src="/sample/araki/lib/jquery.js"></script>
 <script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.core.js"></script>
@@ -11,63 +12,65 @@
 <script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.mouse.js"></script>
 <script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.sortable.js"></script>
+<script type='text/javascript' src="/sample/araki/js/plusTabs.js"></script>
+<script type='text/javascript' src="/sample/araki/js/ui/jquery.ui.dialog.js"></script>
+<script type='text/javascript' src="/sample/araki/js/ui/jquery.ui.button.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body id="my_body">
+	<div id="jquery-ui-dialog" title="タブ追加フォーム">
+	    <form>
+	        <fieldset class="ui-helper-reset">
+	            <label for="tab_title">タイトル</label>
+	            <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+	            <label for="tab_content">内容</label>
+	            <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
+	        </fieldset>
+	    </form>
+	</div>
 
 	<table id="my_table">
 		<tr>
 			<td class="my_table_sell">
+				<button id="add_tab">タブを追加</button>
 				<div id="tabs">
+					<div class="my_ul">
 				    <ul>
-				        <li class="ui-state-default"><a href="#tabs-1">メニュー 1</a></li>
-				        <li class="ui-state-default"><a href="#tabs-2">メニュー 2</a></li>
-				        <li class="ui-state-default"><a href="#tabs-3">メニュー 3</a></li>
-				        <li class="ui-state-default"><a href="#tabs-4">メニュー 4</a></li>
-				        <li class="ui-state-default"><a href="#tabs-5">メニュー 5</a></li>
-				        <li class="ui-state-default"><a href="#tabs-6">メニュー 6</a></li>
-				        <li class="ui-state-default"><a href="#tabs-7">メニュー 7</a></li>
-				        <li class="ui-state-default"><a href="#tabs-8">メニュー 8</a></li>
-				        <li class="ui-state-default"><a href="#tabs-9">メニューeogheogheogheogheo</a></li>
+				        <li class="ui-state-default"><a href="#tabs-1">メニュー 1</a><span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li class="ui-state-default"><a href="#tabs-2">メニュー 2</a><span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li class="ui-state-default"><a href="#tabs-3">メニュー 3</a><span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				    </ul>
 				    <div  class="my_table_sell_inner">
 				    <div id="tabs-1">
 				       
 				    </div>
 				    <div id="tabs-2">
-				        <p>メニュー 2 の内容。</p>
+				        <p>メニュー 2 の内容。hooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
 				    </div>
 				    <div id="tabs-3">
 				        <p>メニュー 3 の内容。</p>
 				    </div>
-				    <div id="tabs-4">
-				        <p>メニュー 1 の内容。</p>
-				    </div>
-				    <div id="tabs-5">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="tabs-6">
-				        <p>メニュー 3 の内容。</p>
-				    </div>
-				    <div id="tabs-7">
-				        <p>メニュー 1 の内容。</p>
-				    </div>
-				    <div id="tabs-8">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="tabs-9">
-				        <p>メニュー 3 の内容。</p>
 				    </div>
 				    </div>
 				</div>
 			</td>
 			<td class="my_centerBtn">
 				<div>
-					btn
+					<input type="button" value="up">
+				</div>
+				<p/>
+				<div>
+					<input type="button" value="down">
+				</div>
+				<p/>
+				<div>
+					<input type="button" value="diff">
 				</div>
 			</td>
 			<td class="my_table_sell">
 				<div id="left-tabs">
+					<div class="my_ul">
 				    <ul>
 				        <li class="ui-state-default"><a href="#left-tabs-4">メニュー 1</a></li>
 				        <li class="ui-state-default"><a href="#left-tabs-5">メニュー 2</a></li>
@@ -82,6 +85,7 @@
 				    </div>
 				    <div id="left-tabs-6">
 				        <p>メニュー 3 の内容。</p>
+				    </div>
 				    </div>
 				    </div>
 				</div>
@@ -99,6 +103,56 @@ $( function() {
     $( '.ui-tabs-nav' ) . sortable( {
         axis: 'x'
     } );
+	var $tab_title_input = $( '#tab_title' ),
+		$tab_content_input = $( '#tab_content' );
+    var tab_counter = 2;
+	var $tabs = $( '#jquery-ui-tabs' ) . tabs( {
+		tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+		add: function( event, ui ) {
+			var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
+			$( ui . panel ) . append( '<p>' + tab_content + '</p>' );
+		}
+	} );
+
+	var $dialog = $( '#jquery-ui-dialog' ) . dialog( {
+		autoOpen: false,
+		modal: true,
+		buttons: {
+			'追加': function() {
+				addTab();
+				$( this ) . dialog( 'close' );
+			},
+			'キャンセル': function() {
+				$( this ) . dialog( 'close' );
+			}
+		},
+		open: function() {
+			$tab_title_input . focus();
+		},
+		close: function() {
+			$form[ 0 ] . reset();
+		}
+	} );
+	var $form = $( "form", $dialog ) . submit( function() {
+		addTab();
+		$dialog . dialog( 'close' );
+		return false;
+	} );
+
+	function addTab() {
+		var tab_title = $tab_title_input . val() || 'タブ ' + tab_counter;
+		$tabs . tabs( 'add', '#jquery-ui-tabs-' + tab_counter, tab_title );
+		tab_counter++;
+	}
+
+	$( '#add_tab' ).button().click( function() {
+		$dialog.dialog( 'open' );
+	} );
+
+	$( '#jquery-ui-tabs span.ui-icon-close' ).live( 'click', function() {
+		var index = $( 'li', $tabs ) . index( $( this ) . parent() );
+		$tabs . tabs( 'remove', index );
+	} );
 });
 // -->
 </script>

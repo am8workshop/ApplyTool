@@ -19,6 +19,8 @@
 	padding: 3px;
 	text-decoration: none;
 	font-size: 1px;
+	width : 100%;
+	overflow : hidden;
 }
 
 .my_table_sell_inner {
@@ -51,7 +53,26 @@
     cursor: move;
 }
 
-
+#jquery-ui-dialog label, #jquery-ui-dialog input {
+    display:block;
+}
+#jquery-ui-dialog label {
+    margin-top: 0.5em;
+}
+#jquery-ui-dialog input, #jquery-ui-dialog textarea {
+    width: 95%;
+}
+#jquery-ui-tabs {
+    font-size: 15px;
+}
+#jquery-ui-tabs li .ui-icon-close {
+    float: left; margin: 0.4em 0.2em 0 0; cursor: pointer;
+}
+#add_tab {
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
 
 
 
