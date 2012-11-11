@@ -10,13 +10,23 @@
 <title>Insert title here</title>
 </head>
 <body id="my_body">
-<div id="jquery-ui-dialog" title="タブ追加フォーム">
+<div id="jquery-ui-dialog" title="接続先追加">
     <form>
         <fieldset class="ui-helper-reset">
-            <label for="tab_title">タイトル</label>
-            <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
-            <label for="tab_content">内容</label>
-            <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
+            <label for="tab_title">タブ名</label>
+            <input type="text" name="tab_title" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_content">ホスト名</label>
+            <input type="text" name="tab_title" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">ユーザ名</label>
+            <input type="text" name="tab_title" id="userName" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">パスワード</label>
+            <input type="text" name="tab_title" id="password" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">ポート番号</label>
+            <input type="text" name="tab_title" id="portNm" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">sshキー</label>
+            <input type="text" name="tab_title" id="sshKey" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">取得するディレクトリパス</label>
+            <input type="text" name="tab_title" id="dirPass" value="" class="ui-widget-content ui-corner-all" />
         </fieldset>
     </form>
 </div>
@@ -116,6 +126,7 @@ $( function() {
 	    modal: true,
 	    buttons: {
 	        '追加': function() {
+	            setLocalStorage();
 	            addTab();
 	            jQuery( this ) . dialog( 'close' );
 	        },
@@ -143,22 +154,27 @@ $( function() {
 	    tab_counter++;
 	}
 	
-	jQuery( '#add_tab' )
+	function setLocalStorage(){
+		
+		
+	}
+	
+	$( '#add_tab' )
 	    .button()
 	    .click( function() {
 	        $dialog.dialog( 'open' );
 	    } );
 	
-	jQuery( '#left-tabs span.ui-icon-close' ).live( 'click', function() {
+	$( '#left-tabs span.ui-icon-close' ).live( 'click', function() {
 	    var index = jQuery( 'li', $tabs ) . index( jQuery( this ) . parent() );
 	    $tabs . tabs( 'remove', index );
 	} );
-	jQuery( '#right-tabs span.ui-icon-close' ).live( 'click', function() {
+	$( '#right-tabs span.ui-icon-close' ).live( 'click', function() {
 	    var index = jQuery( 'li', $tabs ) . index( jQuery( this ) . parent() );
 	    $tabs . tabs( 'remove', index );
 	} );
 	
-	jQuery( '.ui-tabs-nav' ) . sortable( {
+	$( '.ui-tabs-nav' ) . sortable( {
         axis: 'x'
     } );
 });
