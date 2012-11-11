@@ -94,15 +94,16 @@ $( function() {
 	var $tab_title_input = jQuery( '#tab_title' ),
 	    $tab_content_input = jQuery( '#tab_content' );
 	var tab_counter = 2;
-	
-	var $tabs = jQuery( '#left-tabs' ) . tabs( {
+
+	var $tabs = jQuery( '#right-tabs' ) . tabs( {
 	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add: function( event, ui ) {
 	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
 	        jQuery( ui . panel ) . append( '<p>' + tab_content + '</p>' );
 	    }
 	} );
-	var $tabs = jQuery( '#right-tabs' ) . tabs( {
+	
+	var $tabs = jQuery( '#left-tabs' ) . tabs( {
 	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add: function( event, ui ) {
 	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
