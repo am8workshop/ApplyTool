@@ -22,7 +22,7 @@
             <label for="tab_title">パスワード</label>
             <input type="text" name="tab_title" id="password" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ポート番号</label>
-            <input type="text" name="tab_title" id="portNm" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" name="tab_title" id="portName" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">sshキー</label>
             <input type="text" name="tab_title" id="sshKey" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">取得するディレクトリパス</label>
@@ -151,11 +151,18 @@ $( function() {
 	    var tab_title = $tab_title_input . val() || 'タブ ' + tab_counter;
 	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tab_title );
 	    tab_counter++;
+	  
+	    setLocalStorage();
 	}
 	
 	function setLocalStorage(){
-		
-		
+		var info = {
+				tabTitle : $('#tabTitle').val();
+				hostName : $('#hostName').val();
+				userName : $('#userName').val();
+				password : $('#password').val();
+				portName : $('#portName').val(); 
+		}	
 	}
 	
 	$( '#add_tab' )
