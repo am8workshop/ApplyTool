@@ -4,85 +4,92 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="/sample/araki/css/themes/base/jquery.ui.all.css">
 <link rel="stylesheet" href="/sample/araki/css/my_css.css" />
-<script type="text/javascript" src="/sample/araki/lib/jquery.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.core.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.tabs.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.mouse.js"></script>
-<script type="text/javascript" src="/sample/araki/js/ui/jquery.ui.sortable.js"></script>
+<script type="text/javascript" src="/sample/araki/lib/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/sample/araki/js/ui/jquery-ui.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body id="my_body">
+<div id="jquery-ui-dialog" title="接続先追加">
+    <form>
+        <fieldset class="ui-helper-reset">
+            <label for="tab_title">タブ名</label>
+            <input type="text" name="tab_title" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_content">ホスト名</label>
+            <input type="text" name="tab_title" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">ユーザ名</label>
+            <input type="text" name="tab_title" id="userName" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">パスワード</label>
+            <input type="text" name="tab_title" id="password" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">ポート番号</label>
+            <input type="text" name="tab_title" id="portName" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">sshキー</label>
+            <input type="text" name="tab_title" id="sshKey" value="" class="ui-widget-content ui-corner-all" />
+            <label for="tab_title">取得するディレクトリパス</label>
+            <input type="text" name="tab_title" id="dirPass" value="" class="ui-widget-content ui-corner-all" />
+        </fieldset>
+    </form>
+</div>
+<button id="add_tab">タブを追加</button>
 
 	<table id="my_table">
 		<tr>
 			<td class="my_table_sell">
-				<div id="tabs">
+				<div id="left-tabs">
 				    <ul>
-				        <li class="ui-state-default"><a href="#tabs-1">メニュー 1</a></li>
-				        <li class="ui-state-default"><a href="#tabs-2">メニュー 2</a></li>
-				        <li class="ui-state-default"><a href="#tabs-3">メニュー 3</a></li>
-				        <li class="ui-state-default"><a href="#tabs-4">メニュー 4</a></li>
-				        <li class="ui-state-default"><a href="#tabs-5">メニュー 5</a></li>
-				        <li class="ui-state-default"><a href="#tabs-6">メニュー 6</a></li>
-				        <li class="ui-state-default"><a href="#tabs-7">メニュー 7</a></li>
-				        <li class="ui-state-default"><a href="#tabs-8">メニュー 8</a></li>
-				        <li class="ui-state-default"><a href="#tabs-9">メニューeogheogheogheogheo</a></li>
+				        <li><a href="#left-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#left-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#left-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				    </ul>
-				    <div  class="my_table_sell_inner">
-				    <div id="tabs-1">
-				       
-				    </div>
-				    <div id="tabs-2">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="tabs-3">
-				        <p>メニュー 3 の内容。</p>
-				    </div>
-				    <div id="tabs-4">
-				        <p>メニュー 1 の内容。</p>
-				    </div>
-				    <div id="tabs-5">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="tabs-6">
-				        <p>メニュー 3 の内容。</p>
-				    </div>
-				    <div id="tabs-7">
-				        <p>メニュー 1 の内容。</p>
-				    </div>
-				    <div id="tabs-8">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="tabs-9">
-				        <p>メニュー 3 の内容。</p>
-				    </div>
+				    <div class="my_table_sell_inner">
+					    <div id="left-tabs-1">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
+					    <div id="left-tabs-2">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
+					    <div id="left-tabs-3">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
 				    </div>
 				</div>
 			</td>
 			<td class="my_centerBtn">
 				<div>
-					btn
+					<input type="button" value="up">
+				</div>
+				<p/>
+				<div>
+					<input type="button" value="down">
+				</div>
+				<p/>
+				<div>
+					<input type="button" value="diff">
 				</div>
 			</td>
 			<td class="my_table_sell">
-				<div id="left-tabs">
+				<div id="right-tabs">
 				    <ul>
-				        <li class="ui-state-default"><a href="#left-tabs-4">メニュー 1</a></li>
-				        <li class="ui-state-default"><a href="#left-tabs-5">メニュー 2</a></li>
-				        <li class="ui-state-default"><a href="#left-tabs-6">メニュー 3</a></li>
+				        <li><a href="#right-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#right-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#right-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				    </ul>
-				    <div  class="my_table_sell_inner">
-				    <div id="left-tabs-4">
-				        <p>メニュー 1 の内容。</p>
-				    </div>
-				    <div id="left-tabs-5">
-				        <p>メニュー 2 の内容。</p>
-				    </div>
-				    <div id="left-tabs-6">
-				        <p>メニュー 3 の内容。</p>
-				    </div>
+				    <div class="my_table_sell_inner">
+					    <div id="right-tabs-1">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
+					    <div id="right-tabs-2">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
+					    <div id="right-tabs-3">
+					        <p>タブ 1 の内容。</p>
+					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
+					    </div>
 				    </div>
 				</div>
 			</td>
@@ -94,9 +101,87 @@
 <script type="text/javascript">  
 <!--
 $( function() {
-    $( '#tabs' ) . tabs();
-    $('#left-tabs').tabs();
-    $( '.ui-tabs-nav' ) . sortable( {
+	var $tab_title_input = jQuery( '#tab_title' ),
+	    $tab_content_input = jQuery( '#tab_content' );
+	var tab_counter = 2;
+
+	var $tabs = jQuery( '#right-tabs' ) . tabs( {
+	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+	    add: function( event, ui ) {
+	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
+	        jQuery( ui . panel ) . append( '<p>' + tab_content + '</p>' );
+	    }
+	} );
+	
+	var $tabs = jQuery( '#left-tabs' ) . tabs( {
+	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+	    add: function( event, ui ) {
+	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
+	        jQuery( ui . panel ) . append( '<p>' + tab_content + '</p>' );
+	    }
+	} );
+	
+	var $dialog = jQuery( '#jquery-ui-dialog' ) . dialog( {
+	    autoOpen: false,
+	    modal: true,
+	    buttons: {
+	        '追加': function() {
+	            setLocalStorage();
+	            addTab();
+	            jQuery( this ) . dialog( 'close' );
+	        },
+	        'キャンセル': function() {
+	            jQuery( this ) . dialog( 'close' );
+	        }
+	    },
+	    open: function() {
+	        $tab_title_input . focus();
+	    },
+	    close: function() {
+	        $form[ 0 ] . reset();
+	    }
+	} );
+	
+	var $form = jQuery( "form", $dialog ) . submit( function() {
+	    addTab();
+	    $dialog . dialog( 'close' );
+	    return false;
+	} );
+	
+	function addTab() {
+	    var tab_title = $tab_title_input . val() || 'タブ ' + tab_counter;
+	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tab_title );
+	    tab_counter++;
+	  
+	    setLocalStorage();
+	}
+	
+	function setLocalStorage(){
+		var info = {
+				tabTitle : $('#tabTitle').val();
+				hostName : $('#hostName').val();
+				userName : $('#userName').val();
+				password : $('#password').val();
+				portName : $('#portName').val(); 
+		}	
+	}
+	
+	$( '#add_tab' )
+	    .button()
+	    .click( function() {
+	        $dialog.dialog( 'open' );
+	    } );
+	
+	$( '#left-tabs span.ui-icon-close' ).live( 'click', function() {
+	    var index = jQuery( 'li', $tabs ) . index( jQuery( this ) . parent() );
+	    $tabs . tabs( 'remove', index );
+	} );
+	$( '#right-tabs span.ui-icon-close' ).live( 'click', function() {
+	    var index = jQuery( 'li', $tabs ) . index( jQuery( this ) . parent() );
+	    $tabs . tabs( 'remove', index );
+	} );
+	
+	$( '.ui-tabs-nav' ) . sortable( {
         axis: 'x'
     } );
 });
