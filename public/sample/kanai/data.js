@@ -1,22 +1,22 @@
 //コンストラクタ
-var DataUtil = function(){};
-//global定義　
-var dataUtil = new DataUtil();
+var DataUtil = function(){
+	DataUtil.prototype.localStorage = {}
+	DataUtil.prototype.api = {}
+};
+//globalでクラスをもたせる
+dataUtil = new DataUtil();
 
 //メソッドセットアップ
-DataUtil.prototype.localStorage = {}
-DataUtil.prototype.api = {}
-
 DataUtil.prototype.localStorage.setConnectInfo = function (){
-						var info = {
+						var connectInfo = {
 								hostName : $('#hostName').val(),
 								userName : $('#userName').val(),
 								password : $('#password').val(),
 								portName : $('#portNumber').val(),
 								dirParh : $('#dirPath').val(),
 						}
-						dataUtil['connectInfo'] = JSON.stringify(info);
-						localStorage.setItem($('#tabTitle').val(), JSON.stringify(info));
+						dataUtil['connectInfo'] = JSON.stringify(connectInfo);
+						localStorage.setItem($('#tabTitle').val(), JSON.stringify(connectInfo));
 					}
 	
 DataUtil.prototype.api.getFiles = function (){
