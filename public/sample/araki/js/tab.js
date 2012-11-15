@@ -24,8 +24,16 @@ $( function() {
 	    modal: true,
 	    buttons: {
 	        '追加': function() {
-	        	dataUtil.localStorage.setConnectInfo();
-	        	dataUtil.api.getFiles();
+				var connectInfo = {
+						hostName : $('#hostName').val(),
+						userName : $('#userName').val(),
+						password : $('#password').val(),
+						portName : $('#portNumber').val(),
+						dirParh : $('#dirPath').val(),
+				}
+				localStorage.setItem($('#tabTitle').val(), JSON.stringify(connectInfo))
+	        	var api = new Api('http://localhost:8888/sample/kanai/json.html', JSON.stringify(connectInfo));
+	        	api.connectServer()
 	            addTab();
 	            $( this ) . dialog( 'close' );
 	        },
