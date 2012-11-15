@@ -1,7 +1,5 @@
 <?php
-namespace Album;
-
-use Album\Model\AlbumTable;
+namespace Apply;
 
 class Module
 {
@@ -26,14 +24,14 @@ class Module
     
     public function getServiceConfig()
     {
-    	return array(
-    			'factories' => array(
-    					'Album\Model\AlbumTable' =>  function($sm) {
-    						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-    						$table     = new AlbumTable($dbAdapter);
-    						return $table;
-    					},
-    			),
-    	);
+//     	return array(
+//     			'factories' => array(
+//     					'Album\Model\AlbumTable' =>  function($sm) {
+//     						$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+//     						$table     = new AlbumTable($dbAdapter);
+//     						return $table;
+//     					},
+//     			),
+//     	);
     }
 }
