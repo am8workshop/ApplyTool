@@ -1,5 +1,9 @@
+//コンストラクタ
 var DataUtil = function(){};
+//global定義　
 var dataUtil = new DataUtil();
+
+//メソッドセットアップ
 DataUtil.prototype.localStorage = {}
 DataUtil.prototype.api = {}
 
