@@ -14,17 +14,34 @@ use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
 //use Apply\Model\Album;          // <-- Add this import
 //use Album\Form\AlbumForm;       // <-- Add this import
-use Zend\Di\Di;
 
 class LsController extends AbstractActionController
 {
+	public function indexAction()
+	{
+		return "hoge";
+	}
+	
 	public function lAction()
 	{
 		$result = new JsonModel(array(
-				'some_parameter' => 'some value',
-				'success'=>true,
+				'resultset' => (array(
+					'path'=> (array(
+							current => 'current',
+							home => 'home')),
+					'status' => (array(
+							'code' => 'code',
+							'message' => 'message')),
+					'files' => (array(
+							'name' => 'name',
+							'type' => 'type',
+							'permission' => 'permission',
+							'date' => 'date',
+							'size' => 'size',
+							'owner' => 'owner',
+							'group' => 'group'))
+				))
 		));
-		
 		return $result;
 	}
 }
