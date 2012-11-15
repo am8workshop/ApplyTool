@@ -2,23 +2,38 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Album\Controller\Album' => 'Album\Controller\AlbumController',
+            'Apply\Controller\Ls' => 'Apply\Controller\LsController',
         ),
     ),
 
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'album' => array(
+            'apply' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/album[/:action][/:id]',
+                    'route'    => '/apply[/:controller[/:action]][/:id]',
+                    'constraints' => array(
+                    	'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Apply\Controller\Ls',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'ls' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/apply/ls[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Album',
+                        'controller' => 'Apply\Controller\Ls',
                         'action'     => 'index',
                     ),
                 ),
@@ -28,7 +43,7 @@ return array(
 
     'view_manager' => array(
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'apply' => __DIR__ . '/../view',
         ),
     	'strategies' => array(
     			'ViewJsonStrategy',
