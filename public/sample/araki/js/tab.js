@@ -24,8 +24,16 @@ $( function() {
 	    modal: true,
 	    buttons: {
 	        '追加': function() {
-	        	dataUtil.localStorage.setConnectInfo();
-	        	dataUtil.api.getFiles();
+				var connectInfo = {
+						hostName : $('#hostName').val(),
+						userName : $('#userName').val(),
+						password : $('#password').val(),
+						portName : $('#portNumber').val(),
+						dirParh : $('#dirPath').val(),
+				}
+				localStorage.setItem($('#tab_title').val(), JSON.stringify(connectInfo))
+	        	var api = new Api('http://localhost:8888/sample/kanai/json.html', JSON.stringify(connectInfo));
+	        	api.getFiles();
 	            addTab();
 	            $( this ) . dialog( 'close' );
 	        },
@@ -48,7 +56,7 @@ $( function() {
 	} );
 	
 	function addTab() {
-	    var tab_title = $tab_title_input . val() || 'タブ ' + tab_counter;
+	    var tab_title = $tab_title_input . val() ;
 	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tab_title );
 	    tab_counter++;
 	  
