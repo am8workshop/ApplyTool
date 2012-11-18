@@ -1,0 +1,57 @@
+#my_body {
+	margin : 0 auto;
+	width : 780px;
+	height : 480px;
+}
+
+#my_table {
+	width : 760px;
+}
+
+.my_table_sell {
+	width : 320px;
+	height : 450px;
+	white-space : normal;
+}
+
+.my_table_sell_inner {
+	width : 310px;
+	height : 440px;
+	vertical-align : baseline;
+	overflow : auto;
+	padding : 5px;
+}
+
+.my_centerBtn {
+	width : 100px;
+	height : 460px;
+	text-align : center;
+}
+
+.w100{
+	width : 100%;
+}
+
+/* jquery ui —p‚ÌCSS */
+
+#jquery-ui-dialog label, #jquery-ui-dialog input {
+    display:block;
+}
+#jquery-ui-dialog label {
+    margin-top: 0.5em;
+}
+#jquery-ui-dialog input, #jquery-ui-dialog textarea {
+    width: 95%;
+}
+#left-tabs,
+#right-tabs {
+    font-size: 6px;
+}
+#left-tabs li .ui-icon-close,
+#right-tabs li .ui-icon-close {
+    float: left; margin: 0.2em 0.1em 0 0; cursor: pointer;
+}
+#add_tab {
+    cursor: pointer;
+    font-size: 12px;
+}
