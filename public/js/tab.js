@@ -73,7 +73,7 @@ $( function() {
 	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tabTitle );
 	}
 	
-	$( '#add_tab' ).button().click(function(){
+	$( '#add_tab' ).click(function(){
 	        $dialog.dialog( 'open' );
 	    });
 	

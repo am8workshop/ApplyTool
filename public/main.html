@@ -14,23 +14,22 @@
     <form>
         <fieldset class="ui-helper-reset">
             <label for="tab_title">タブ名</label>
-            <input type="text" name="tab_title" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_content">ホスト名</label>
-            <input type="text" name="tab_title" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ユーザ名</label>
-            <input type="text" name="tab_title" id="userName" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="userName" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">パスワード</label>
-            <input type="text" name="tab_title" id="password" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="password" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ポート番号</label>
-            <input type="text" name="tab_title" id="portNumber" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="portNumber" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">sshキー</label>
-            <input type="text" name="tab_title" id="sshKey" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="sshKey" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">取得するディレクトリパス</label>
-            <input type="text" name="tab_title" id="dirPath" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="dirPath" value="" class="ui-widget-content ui-corner-all" />
         </fieldset>
     </form>
 </div>
-<button id="add_tab">タブを追加</button>
 
 	<table id="my_table">
 		<tr>
@@ -40,19 +39,17 @@
 				        <li><a href="#left-tabs-1">社内</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#left-tabs-2">検品</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#left-tabs-3">本番</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a id="add_tab"><span id="add_tab">+</span></a></li>
 				    </ul>
 				    <div class="my_table_sell_inner">
 					    <div id="left-tabs-1">
 					        <p>社内の内容。</p>
-					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-2">
 					        <p>検品の内容。</p>
-					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-3">
 					        <p>本番の内容。</p>
-					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 				    </div>
 				</div>
