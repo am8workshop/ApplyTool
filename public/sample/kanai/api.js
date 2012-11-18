@@ -11,6 +11,7 @@ Api.prototype.request = function(){
 	$.ajax({
 	    'type': 'GET',
 	    'url': this.url,
+	    'async' : false,
 	    'dataType': 'json',
 	    'data': this.param,
 	    'success': function(data) {

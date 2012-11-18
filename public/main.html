@@ -1,8 +1,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="/sample/araki/css/themes/base/jquery.ui.all.css">
-<link rel="stylesheet" href="/sample/araki/css/my_css.css" />
+<link rel="stylesheet" href="css/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" href="css/main.css" />
 <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery_ui/jquery-ui.js"></script>
 <script type="text/javascript" src="js/tab.js"></script>
@@ -14,7 +14,7 @@
     <form>
         <fieldset class="ui-helper-reset">
             <label for="tab_title">タブ名</label>
-            <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" name="tab_title" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_content">ホスト名</label>
             <input type="text" name="tab_title" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ユーザ名</label>
@@ -37,21 +37,21 @@
 			<td class="my_table_sell">
 				<div id="left-tabs">
 				    <ul>
-				        <li><a href="#left-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
-				        <li><a href="#left-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
-				        <li><a href="#left-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#left-tabs-1">社内</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#left-tabs-2">検品</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a href="#left-tabs-3">本番</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				    </ul>
 				    <div class="my_table_sell_inner">
 					    <div id="left-tabs-1">
-					        <p>タブ 1 の内容。</p>
+					        <p>社内の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-2">
-					        <p>タブ 2 の内容。</p>
+					        <p>検品の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-3">
-					        <p>タブ 3 の内容。</p>
+					        <p>本番の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 				    </div>
@@ -83,11 +83,11 @@
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="right-tabs-2">
-					        <p>タブ 1 の内容。</p>
+					        <p>タブ 2 の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="right-tabs-3">
-					        <p>タブ 1 の内容。</p>
+					        <p>タブ 3 の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 				    </div>
@@ -95,8 +95,6 @@
 			</td>
 		</tr>
 	</table>
-
 </body>
 
 </html>
->

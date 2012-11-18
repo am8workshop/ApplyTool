@@ -1,21 +1,28 @@
 $( function() {
-	var $tab_title_input = $( '#tab_title' ),
-	    $tab_content_input = $( '#tab_content' );
-	var tab_counter = 2;
+	var tab_counter;
+	//tabライブラリの中身触りたくないのでここでnewしたAPIオブジェクトを保持させてください。
+	var api;
 
 	var $tabs = $( '#right-tabs' ) . tabs( {
 	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add: function( event, ui ) {
-	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
-	        $( ui . panel ) . append( '<p>' + tab_content + '</p>' );
+	        $( ui . panel ) . append( '<p>タブの中身</p>' );
 	    }
 	} );
 	
-	var $tabs = $( '#left-tabs' ) . tabs( {
-	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
-	    add: function( event, ui ) {
-	        var tab_content = $tab_content_input . val() || 'タブ ' + tab_counter + ' の内容。';
-	        $( ui . panel ) . append( '<p>' + tab_content + '</p>' );
+	//addされたタブの中身を生成する。
+	var $tabs = $( '#left-tabs' ).tabs( {
+		//中身切り替えaタグと削除ボタンがテンプレ
+	    tabTemplate : "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+	    add : function(event, ui) {
+	    	//パス表示
+	        $(ui.panel) . append( 'CurrentPath<input class="w100" type="text" value="' + api.res.resultset.path.current + '"</input><hr>'); 
+	        //files表示
+	        var files = api.res.resultset.files;
+	        for(var i = 0; i < files.length; i++){
+	        	$(ui.panel).append( '<p>' + files[i].type + ':' + files[i].name + '</p>' );
+	        }
+	        
 	    }
 	} );
 	
@@ -24,6 +31,7 @@ $( function() {
 	    modal: true,
 	    buttons: {
 	        '追加': function() {
+	        	//接続情報取得
 				var connectInfo = {
 						hostName : $('#hostName').val(),
 						userName : $('#userName').val(),
@@ -31,9 +39,12 @@ $( function() {
 						portName : $('#portNumber').val(),
 						dirParh : $('#dirPath').val(),
 				}
+				//ローカルストレージに接続情報セット
 				localStorage.setItem($('#tab_title').val(), JSON.stringify(connectInfo))
-	        	var api = new Api('http://localhost:8888/sample/kanai/json.html', JSON.stringify(connectInfo));
-	        	api.getFiles();
+				
+				api = new Api('getFiles', JSON.stringify(connectInfo));
+				//レスポンスをapiオブジェクトにセット
+	        	api.res = api.getFiles();
 	            addTab();
 	            $( this ) . dialog( 'close' );
 	        },
@@ -42,7 +53,7 @@ $( function() {
 	        }
 	    },
 	    open: function() {
-	        $tab_title_input . focus();
+	    	//ダイアログ開いた際の初期処理を行う
 	    },
 	    close: function() {
 	        $form[ 0 ] . reset();
@@ -56,20 +67,15 @@ $( function() {
 	} );
 	
 	function addTab() {
-	    var tab_title = $tab_title_input . val() ;
-	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tab_title );
-	    tab_counter++;
-	  
-	    
+	    var tabTitle = $( '#tabTitle' ).val();
+	    //タブのidが現在連番になっている。タブ移動で必要？
+	    tab_counter = $("#left-tabs > ul > li").length + 1;
+	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tabTitle );
 	}
 	
-	
-	
-	$( '#add_tab' )
-	    .button()
-	    .click( function() {
+	$( '#add_tab' ).button().click(function(){
 	        $dialog.dialog( 'open' );
-	    } );
+	    });
 	
 	$( '#left-tabs span.ui-icon-close' ).live( 'click', function() {
 	    var index = $( 'li', $tabs ) . index( $( this ) . parent() );
