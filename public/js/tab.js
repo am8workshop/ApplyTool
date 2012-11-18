@@ -3,7 +3,7 @@ $( function() {
 	//tabライブラリの中身触りたくないのでここでnewしたAPIオブジェクトを保持させてください。
 	var api;
 
-	var $tabs = $( '#right-tabs' ) . tabs( {
+	var $rightTabs = $( '#right-tabs' ) . tabs( {
 	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add: function( event, ui ) {
 	        $( ui . panel ) . append( '<p>タブの中身</p>' );
@@ -11,7 +11,7 @@ $( function() {
 	} );
 	
 	//addされたタブの中身を生成する。
-	var $tabs = $( '#left-tabs' ).tabs( {
+	var $leftTabs = $( '#left-tabs' ).tabs( {
 		//中身切り替えaタグと削除ボタンがテンプレ
 	    tabTemplate : "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add : function(event, ui) {
@@ -70,7 +70,7 @@ $( function() {
 	    var tabTitle = $( '#tabTitle' ).val();
 	    //タブのidが現在連番になっている。タブ移動で必要？
 	    tab_counter = $("#left-tabs > ul > li").length + 1;
-	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tabTitle );
+	    $leftTabs . tabs( 'add', '#left-tabs-' + tab_counter, tabTitle );
 	}
 	
 	$( '#add_tab' ).click(function(){
@@ -78,12 +78,12 @@ $( function() {
 	    });
 	
 	$( '#left-tabs span.ui-icon-close' ).live( 'click', function() {
-	    var index = $( 'li', $tabs ) . index( $( this ) . parent() );
-	    $tabs . tabs( 'remove', index );
+	    var index = $( 'li', $leftTabs ) . index( $( this ) . parent() );
+	    $leftTabs . tabs( 'remove', index );
 	} );
 	$( '#right-tabs span.ui-icon-close' ).live( 'click', function() {
-	    var index = $( 'li', $tabs ) . index( $( this ) . parent() );
-	    $tabs . tabs( 'remove', index );
+	    var index = $( 'li', $rightTabs ) . index( $( this ) . parent() );
+	    $rightTabs . tabs( 'remove', index );
 	} );
 	
 	$( '.ui-tabs-nav' ) . sortable( {
