@@ -4,11 +4,11 @@ var Api = function(apiName, param){
 	this.apiName = apiName;
 }
 
+Api.prototype.urlMap = {
+	getFiles : "http://localhost:8888/sample/kanai/json.html"
+}
 Api.prototype.getApiUrl = function(apiName){
-	var apiUrlMap = {
-						getFiles : "http://localhost:8888/sample/kanai/json.html"
-					}
-	return apiUrlMap[apiName];
+	return this.urlMap[apiName];
 }
 
 Api.prototype.getFiles = function(){
@@ -18,18 +18,20 @@ Api.prototype.getFiles = function(){
 
 Api.prototype.request = function(){
 	var res;
+	//paramメソッドでオブジェクトをクエリに変換
+	var param = $.param(this.param)
 	var url = this.getApiUrl(this.apiName);
 	$.ajax({
 	    'type': 'GET',
 	    'url': url,
 	    'async' : false,
 	    'dataType': 'json',
-	    'data': this.param,
+	    'data': param,
 	    'success': function(data) {
 	    	res = data;
 	    },
 	    'error': function() {
-	    	alert('取得error');
+	    	alert('error');
 	   }
 	});
 	return res;

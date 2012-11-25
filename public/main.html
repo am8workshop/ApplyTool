@@ -6,17 +6,19 @@
 <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/lib/jquery_ui/jquery-ui.js"></script>
 <script type="text/javascript" src="js/tab.js"></script>
+<script type="text/javascript" src="js/LocalStorage.js"></script>	
 <script type="text/javascript" src="js/api.js"></script>
-<title>Insert title here</title>
+<title>Apply Tool</title>
 </head>
 <body id="my_body">
+<h3>セッション名：</h3>
 <div id="jquery-ui-dialog" title="接続先追加">
     <form>
         <fieldset class="ui-helper-reset">
             <label for="tab_title">タブ名</label>
             <input type="text" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_content">ホスト名</label>
-            <input type="text" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
+            <input type="text" id="hostName" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ユーザ名</label>
             <input type="text" id="userName" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">パスワード</label>
@@ -73,6 +75,7 @@
 				        <li><a href="#right-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#right-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#right-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li><a id="add_tab"><span id="add_tab">+</span></a></li>
 				    </ul>
 				    <div class="my_table_sell_inner">
 					    <div id="right-tabs-1">
