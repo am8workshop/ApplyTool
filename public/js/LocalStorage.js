@@ -7,13 +7,14 @@ LocalStorageUtil.prototype.setConnectInfo = function(data){
 	var sessionName= localStorage.getItem('sessionName');
 	var storedData = localStorage.getItem(sessionName);
 	//セッションネームがキーのデータあれば接続先情報追加、なければ新しくデータ作成。
-	var setData = [];
+	var setData = {};
+	var key = new Date().getTime();
 	if(storedData){
 		storedData = JSON.parse(storedData);
-		storedData.push(data);
+		storedData[key] = data;
 		setData = storedData;
 	}else{
-		setData.push(data);
+		setData[key] = data;
 	}
 	//ストレージにデータをセット
 	localStorage.setItem(sessionName, JSON.stringify(setData));
