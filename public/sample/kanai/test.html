@@ -3,14 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
 <title>Insert title here</title>
-<script> 
-
-</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="api.js"></script>
 </head>
 <body>
-<form action="main.html">
-<input type="text" value="" >
-<input type="submit" value="ログイン">
-</form>
+hoge
 </body>
+<script>
+var api = new Api('http://localhost:8888/sample/kanai/json.html', '{"hoge" : "fuga"}');
+api.request();
+
+</script>
 </html>

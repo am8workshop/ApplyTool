@@ -31,6 +31,7 @@ $( function() {
 						portName : $('#portNumber').val(),
 						dirParh : $('#dirPath').val(),
 				}
+<<<<<<< HEAD
 				localStorage.setItem($('#tabTitle').val(), JSON.stringify(connectInfo))
 	        	var api = new Api('http://localhost:8888/sample/kanai/json.html', JSON.stringify(connectInfo));
 	        	api.connectServer()
@@ -57,6 +58,34 @@ $( function() {
 	
 	function addTab() {
 	    var tab_title = $tab_title_input . val() || 'タブ ' + tab_counter;
+=======
+				localStorage.setItem($('#tab_title').val(), JSON.stringify(connectInfo))
+	        	var api = new Api('http://localhost:8888/sample/kanai/json.html', JSON.stringify(connectInfo));
+	        	api.getFiles();
+	            addTab();
+	            $( this ) . dialog( 'close' );
+	        },
+	        'キャンセル': function() {
+	            $( this ) . dialog( 'close' );
+	        }
+	    },
+	    open: function() {
+	        $tab_title_input . focus();
+	    },
+	    close: function() {
+	        $form[ 0 ] . reset();
+	    }
+	} );
+	
+	var $form = $( "form", $dialog ) . submit( function() {
+	    addTab();
+	    $dialog . dialog( 'close' );
+	    return false;
+	} );
+	
+	function addTab() {
+	    var tab_title = $tab_title_input . val() ;
+>>>>>>> branch 'master' of https://github.com/am8workshop/ApplyTool.git
 	    $tabs . tabs( 'add', '#left-tabs-' + tab_counter, tab_title );
 	    tab_counter++;
 	  

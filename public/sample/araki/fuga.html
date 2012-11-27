@@ -15,7 +15,7 @@
     <form>
         <fieldset class="ui-helper-reset">
             <label for="tab_title">タブ名</label>
-            <input type="text" name="tab_title" id="tabTitle" value="" class="ui-widget-content ui-corner-all" />
+            <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
             <label for="tab_content">ホスト名</label>
             <input type="text" name="tab_title" id="hostName" value="hoge" class="ui-widget-content ui-corner-all" />
             <label for="tab_title">ユーザ名</label>
@@ -37,10 +37,10 @@
 		<tr>
 			<td class="my_table_sell">
 				<div id="left-tabs">
-				    <ul>
-				        <li><a href="#left-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
-				        <li><a href="#left-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
-				        <li><a href="#left-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				    <ul id="my_left_ul">
+				        <li class="my_left_li"><a href="#left-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li class="my_left_li"><a href="#left-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
+				        <li class="my_left_li"><a href="#left-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				    </ul>
 				    <div class="my_table_sell_inner">
 					    <div id="left-tabs-1">
@@ -48,11 +48,11 @@
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-2">
-					        <p>タブ 1 の内容。</p>
+					        <p>タブ 2 の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 					    <div id="left-tabs-3">
-					        <p>タブ 1 の内容。</p>
+					        <p>タブ 3 の内容。</p>
 					        <p>この実装例の、jQuery UI の CSS テーマは、デフォルトのテーマを読み込んで使っている。他の CSS テーマにも対応しているので、色々試してみるといい。</p>
 					    </div>
 				    </div>
@@ -73,7 +73,7 @@
 			</td>
 			<td class="my_table_sell">
 				<div id="right-tabs">
-				    <ul>
+				    <ul id="my_right_ul">
 				        <li><a href="#right-tabs-1">タブ 1</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#right-tabs-2">タブ 2</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
 				        <li><a href="#right-tabs-3">タブ 3</a> <span class="ui-icon ui-icon-close">Remove Tab</span></li>
