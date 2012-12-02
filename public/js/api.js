@@ -5,7 +5,7 @@ var Api = function(apiName, param){
 }
 
 Api.prototype.urlMap = {
-	getFiles : "http://localhost:8888/sample/kanai/json.html"
+	getFiles : "/apply/ls/l"
 }
 Api.prototype.getApiUrl = function(apiName){
 	return this.urlMap[apiName];
