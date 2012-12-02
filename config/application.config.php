@@ -2,7 +2,7 @@
 return array(
     'modules' => array(
         'Application',
-        'Album',
+//         'Album',
         'Apply'
     ),
     'module_listener_options' => array(
