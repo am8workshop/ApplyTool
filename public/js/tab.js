@@ -93,4 +93,26 @@ $( function() {
 	$( '.ui-tabs-nav' ) . sortable( {
         axis: 'x'
     } );
+	
+	$('#my_right_ul').droppable({
+		drop: function(event, ui){
+			if (ui.draggable.hasClass('left_li')) {
+				var tagNm = ui.draggable.children().html();
+				var tabId = ui.draggable.attr('rel');
+				var innerText = $(tabId).children();
+				var deleteIndex = $( 'li', $leftTabs ) . index( ui.draggable );
+				$leftTabs . tabs( 'remove', deleteIndex );
+				tab_counter = $("#right-tabs > ul > li").length + 1;
+				//$rightTabs . tabs( 'add', '#right-tabs-' + tab_counter, tagNm );
+				var $move = $( '#right-tabs' ).tabs( {
+					//中身切り替えaタグと削除ボタンがテンプレ
+					tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+				    add: function( event, ui ) {
+				    	$(ui.panel).append(innerText);
+				    }
+				} );
+				$move.tabs('add', '#right-tabs-' + tab_counter, tagNm);
+			}
+		}
+	});
 });
