@@ -106,12 +106,32 @@ $( function() {
 				//$rightTabs . tabs( 'add', '#right-tabs-' + tab_counter, tagNm );
 				var $move = $( '#right-tabs' ).tabs( {
 					//中身切り替えaタグと削除ボタンがテンプレ
-					tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+					tabTemplate: "<li  class='right_li'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 				    add: function( event, ui ) {
 				    	$(ui.panel).append(innerText);
 				    }
 				} );
 				$move.tabs('add', '#right-tabs-' + tab_counter, tagNm);
+			}
+		}
+	});
+	$('#my_left_ul').droppable({
+		drop: function(event, ui){
+			if (ui.draggable.hasClass('right_li')) {
+				var tagNm = ui.draggable.children().html();
+				var tabId = ui.draggable.attr('rel');
+				var innerText = $(tabId).children();
+				var deleteIndex = $( 'li', $rightTabs ) . index( ui.draggable );
+				$rightTabs . tabs( 'remove', deleteIndex );
+				tab_counter = $("#left-tabs > ul > li").length + 1;
+				var $move = $( '#left-tabs' ).tabs( {
+					//中身切り替えaタグと削除ボタンがテンプレ
+					tabTemplate: "<li class='left_li'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+				    add: function( event, ui ) {
+				    	$(ui.panel).append(innerText);
+				    }
+				} );
+				$move.tabs('add', '#left-tabs-' + tab_counter, tagNm);
 			}
 		}
 	});
