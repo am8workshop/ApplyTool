@@ -4,7 +4,7 @@ $( function() {
 	var api;
 
 	var $rightTabs = $( '#right-tabs' ) . tabs( {
-	    tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+	    tabTemplate: "<li class='right_li'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add: function( event, ui ) {
 	        $( ui . panel ) . append( '<p>タブの中身</p>' );
 	    }
@@ -13,7 +13,7 @@ $( function() {
 	//addされたタブの中身を生成する。
 	var $leftTabs = $( '#left-tabs' ).tabs( {
 		//中身切り替えaタグと削除ボタンがテンプレ
-	    tabTemplate : "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
+	    tabTemplate : "<li class='left_li'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 	    add : function(event, ui) {
 	    	//@TODO jquery templateを使おう。
 	    	//パス表示
