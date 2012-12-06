@@ -32,6 +32,13 @@ $( function() {
 	    modal: true,
 	    buttons: {
 	        '追加': function() {
+	        	// 入力情報のチェック とりあえず空文字のみ確認
+	        	var tabTitle = $('#tabTitle').val(),
+					host = $('#hostName').val(),
+					id= $('#userName').val(),
+					pw= $('#password').val(),
+					port= $('#portNumber').val(),
+					parh = $('#dirPath').val();
 	        	//接続情報取得
 	        	//sshKeyのfileを読み込んでバイナリをストレージにいれて置きたい。
 				var connectInfo = {
@@ -90,7 +97,7 @@ $( function() {
 	    $rightTabs . tabs( 'remove', index );
 	} );
 	
-	$( '.ui-tabs-nav' ) . sortable( {
+	$( '.ui-tabs-nav ' ) . sortable( {
         axis: 'x'
     } );
 	
@@ -117,6 +124,7 @@ $( function() {
 	});
 	$('#my_left_ul').droppable({
 		drop: function(event, ui){
+			// 左のタブを右のタブに移動させたときの処理
 			if (ui.draggable.hasClass('right_li')) {
 				var tagNm = ui.draggable.children().html();
 				var tabId = ui.draggable.attr('rel');
