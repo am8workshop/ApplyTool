@@ -21,11 +21,17 @@ $( function() {
 	        //files表示
 	        var files = api.res.resultset.files;
 	        for(var i = 0; i < files.length; i++){
-	        	$(ui.panel).append( '<p>' + files[i].type + ':' + files[i].name + '</p>' );
+	        	$(ui.panel).append( '<p class="cd">' + files[i].type + ':<span>' + files[i].name + '</span></p>' );
 	        }
-	        
 	    }
 	} );
+	
+	//ディレクトリが選択された際にその階層のファイルを取得し表示する
+	$(document).delegate('.cd', 'click', function() {
+		api.param.path = api.param.path + $('span', this).text();
+		api.getFiles();
+		
+	});
 	
 	var $dialog = $( '#jquery-ui-dialog' ) . dialog( {
 	    autoOpen: false,
@@ -38,7 +44,7 @@ $( function() {
 					id= $('#userName').val(),
 					pw= $('#password').val(),
 					port= $('#portNumber').val(),
-					parh = $('#dirPath').val();
+					path = $('#dirPath').val();
 	        	//接続情報取得
 	        	//sshKeyのfileを読み込んでバイナリをストレージにいれて置きたい。
 				var connectInfo = {
@@ -47,7 +53,7 @@ $( function() {
 						id: $('#userName').val(),
 						pw: $('#password').val(),
 						port: $('#portNumber').val(),
-						parh : $('#dirPath').val(),
+						path : $('#dirPath').val(),
 				}
 				//ローカルストレージに接続情報セット
 				//@TODO　同じセッション名をはじく処理が必要

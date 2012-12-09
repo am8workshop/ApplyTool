@@ -3,14 +3,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 <script> 
+
+$(function(){
+	$('#submit').bind('click', function(){
+		localStorage.setItem('sessionName', $('#sessionName').val())
+	});
+});
 
 </script>
 </head>
 <body>
 <form action="main.html">
-<input type="text" value="" >
-<input type="submit" value="ログイン">
+<input id='sessionName' type="text" value="" >
+<input id='submit' type="submit" value="セッション名">
 </form>
 </body>
 </html>
