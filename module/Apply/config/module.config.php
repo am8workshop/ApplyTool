@@ -3,6 +3,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Apply\Controller\Ls' => 'Apply\Controller\LsController',
+        	'Apply\Controller\File' => 'Apply\Controller\FileController',
         ),
     ),
 
@@ -38,6 +39,20 @@ return array(
                     ),
                 ),
             ),
+        	'file' => array(
+        			'type'    => 'segment',
+        			'options' => array(
+        					'route'    => '/apply/file[/:action][/:id]',
+        					'constraints' => array(
+        							'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+        							'id'     => '[0-9]+',
+        					),
+        					'defaults' => array(
+        							'controller' => 'Apply\Controller\File',
+        							'action'     => 'index',
+        					),
+        			),
+        	),
         ),
     ),
 
